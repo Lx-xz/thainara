@@ -1,0 +1,71 @@
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    #container {
+        height: max-content;
+        width: 30rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-flow: column;
+        overflow: hidden;
+        position: relative;
+        transition: 2s;
+
+        #carrousel {
+            height: 30rem;
+            width: max-content;
+            display: flex;
+            animation: slide 10s infinite;
+
+            .images {
+            height: 30rem;
+            width: 30rem;
+            background: var(--image);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            z-index: 1;
+            opacity: var(--opacity);
+            transition: 2s;
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    button {
+        background-color: #000;
+        width: 30rem;
+        padding: 1rem 0;
+        border: 0.2rem solid transparent;
+        border-radius: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@keyframes slide {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-30rem); }
+    50% { transform: translateX(-60rem); }
+    75% { transform: translateX(-90rem); }
+}
