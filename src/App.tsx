@@ -24,7 +24,7 @@ function App() {
       <div id="container">
         <div id="carrousel">
           {urls.map((url, index) => (
-            <div key={index} className="images" style={{ "--image": `./url(${url})` } as React.CSSProperties}></div>
+            <div key={index} className="images" style={{ "--image": `url(./${url})` } as React.CSSProperties}></div>
           ))}
         </div>
       </div>
